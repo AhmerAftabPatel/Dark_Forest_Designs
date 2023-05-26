@@ -49,6 +49,8 @@ app.use("/api", orderRoutes);
 
 // message routes
 app.use("/api", messageRoutes);
+
+app.get("/", (err,res) => res.end("hello"))
 // Database connection
 connectDb();
 
