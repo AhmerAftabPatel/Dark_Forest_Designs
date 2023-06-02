@@ -1,4 +1,4 @@
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const stripe = require("stripe")(String(process.env.STRIPE_SECRET_KEY));
 const paymentConroller = {
   async processPayment(req, res, next) {
     try {
