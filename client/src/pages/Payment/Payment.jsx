@@ -205,7 +205,7 @@ const CheckoutForm = () => {
 };
 
 const stripePromise = loadStripe(
-  process.env.STRIPE_KEY
+  String(process.env.STRIPE_KEY)
 );
 
 const Payment = () => (

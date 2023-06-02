@@ -66,12 +66,12 @@ export const supportData = [
     desc: "Load any product",
     img: plane,
   },
-  {
-    id: 4,
-    title: "MONEY BACK GUARANTEE",
-    desc: "If you don't like the product",
-    img: bank,
-  },
+  // {
+  //   id: 4,
+  //   title: "MONEY BACK GUARANTEE",
+  //   desc: "If you don't like the product",
+  //   img: bank,
+  // },
 ];
 
 export const brandsData = [

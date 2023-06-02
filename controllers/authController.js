@@ -13,7 +13,8 @@ const sendEmail = require("../config/sendMail");
 
 const client = new OAuth2Client(`${process.env.MAIL_CLIENT_ID}`);
 // const CLIENT_URL = `http://localhost:3000`;
-const CLIENT_URL = `https://dark-forest-designs.vercel.app`;
+const CLIENT_URL = process.env.CLIENT;
+// const CLIENT_URL = `https://dark-forest-designs.vercel.app`;
 
 const authCtrl = {
   async register(req, res, next) {

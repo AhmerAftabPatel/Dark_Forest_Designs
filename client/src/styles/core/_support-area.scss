@@ -6,7 +6,10 @@
       grid-template-columns: repeat(2, 1fr);
     }
     @include breakpoint-up("xlarge") {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      justify-content: center;
+      gap: 2;
     }
     &__item {
       @include flex(center, flex-start);
