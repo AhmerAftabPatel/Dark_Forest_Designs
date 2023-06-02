@@ -100,6 +100,7 @@ const CheckoutForm = () => {
       });
 
       if (result.error) {
+        console.log(result.error)
         payBtn.current.disabled = false;
         setErrorMessage(result?.error);
         setSuccessMesssage("");
@@ -204,9 +205,7 @@ const CheckoutForm = () => {
   );
 };
 
-const stripePromise = loadStripe(
-  String(process.env.STRIPE_KEY)
-);
+const stripePromise = loadStripe('pk_test_51NBSFhSBz2WGV9rAlhMp1qvuWtUdZmxz2oIErGwtox3XDPJyeXZJBORbao3fOAcPQVzdf3oqhotvPm5InNprTsgD00mQ3DQNFV');
 
 const Payment = () => (
   <Elements stripe={stripePromise}>
