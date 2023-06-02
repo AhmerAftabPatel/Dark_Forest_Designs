@@ -82,7 +82,7 @@ const CheckoutForm = () => {
 
       if (!stripe || !elements) return;
 
-      const result = await stripe.confirmCardPayment(client_secret, {
+      const result = await stripe.confirmCardPayment(String(client_secret), {
         payment_method: {
           card: elements.getElement(CardNumberElement),
           billing_details: {
@@ -188,7 +188,7 @@ const CheckoutForm = () => {
               {isLoading ? (
                 <Spinner animation="border" size="sm" />
               ) : (
-                `Pay - $${orderInfo && orderInfo.totalPrice.toFixed(2)}`
+                `Pay - Rs.${orderInfo && orderInfo.totalPrice.toFixed(2)}`
               )}
             </button>
             {/* <input
