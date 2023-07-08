@@ -114,7 +114,8 @@ const productController = {
         Stock,
         price,
         isActive,
-        images,
+        images : images[0],
+        media : images,
         ratings,
         category,
       });
@@ -153,7 +154,7 @@ const productController = {
           Stock,
           price,
           isActive,
-          images,
+          media : images,
           ratings,
           category,
         },

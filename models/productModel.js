@@ -9,12 +9,16 @@ const productSchema = new Schema(
       trim: true,
       required: true,
     },
-
     images: {
       type: Object,
       required: true,
     },
-
+    media : [{
+      url: String,
+      public_id: String,
+      message: String
+    }
+    ],
     description: {
       type: String,
       trim: true,

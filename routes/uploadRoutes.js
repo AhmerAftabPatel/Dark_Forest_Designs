@@ -13,5 +13,6 @@ router.post(
 
 // delete image
 router.post("/destroy", auth, uploadController.destroy);
+router.post("/destroy-all", auth, uploadController.destroy);
 
 module.exports = router;

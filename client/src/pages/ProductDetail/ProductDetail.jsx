@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { AiFillHeart, AiFillStar, AiOutlineHeart } from "react-icons/ai";
 import { Spinner } from "react-bootstrap";
 import moment from "moment";
-
+import Carousel from 'react-bootstrap/Carousel';
 import { useToasts } from "react-toast-notifications";
 import {
   getAllProduct,
@@ -162,7 +162,18 @@ const ProductDetail = () => {
         ) : (
           <div className="product__detail grid">
             <div className="product__detail__img">
-              <img src={product?.images?.url} alt="" />
+            <Carousel variant="dark">
+                {product?.media?.map((image) => {
+                  return (<Carousel.Item>
+                  <img
+                    // className="d-block w-100"
+                    src={image.url}
+                    // alt="First slide"
+                  />
+                  </Carousel.Item>)
+                })}
+              </Carousel>
+              {/* <img src={product?.images?.url} alt="" /> */}
             </div>
 
             <div className="product__detail__info">
