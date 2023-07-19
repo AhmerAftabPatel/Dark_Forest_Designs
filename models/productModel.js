@@ -61,6 +61,11 @@ const productSchema = new Schema(
           type: String,
           required: true,
         },
+        images : [{
+          url: String,
+      public_id: String,
+      message: String
+        }],
         title: {
           type: String,
           required: true,

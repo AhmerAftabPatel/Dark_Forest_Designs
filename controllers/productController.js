@@ -206,7 +206,7 @@ const productController = {
   // Create New Review or Update the review
   async createProductReview(req, res, next) {
     try {
-      const { rating, avatar, title, name, comment, productId } = req.body;
+      const { rating, avatar, title, name, comment, productId, images } = req.body;
 
       const review = {
         user: req.user._id,
@@ -215,6 +215,7 @@ const productController = {
         comment,
         title,
         avatar,
+        images
       };
 
       const product = await Products.findById(productId);
@@ -226,7 +227,7 @@ const productController = {
       if (isReviewed) {
         product.reviews.forEach((prev) => {
           if (prev.user.toString() === req.user._id.toString())
-            (prev.rating = rating), (prev.comment = comment);
+            (prev.rating = rating), (prev.comment = comment), (prev.images = images);
         });
       } else {
         product.reviews.push(review);
@@ -248,6 +249,7 @@ const productController = {
         success: true,
       });
     } catch (error) {
+      console.log(error)
       return next(error);
     }
   },
