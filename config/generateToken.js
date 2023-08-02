@@ -1,10 +1,13 @@
 const jwt = require("jsonwebtoken");
 
-exports.generateActiveToken = (payload) => {
+exports.generateActiveToken = async (payload) => {
   // console.log("generate token", process.env.ACTIVE_TOKEN_SECRET);
-  return jwt.sign(payload, `${process.env.ACTIVE_TOKEN_SECRET}`, {
+  console.log(process.env.ACTIVE_TOKEN_SECRET)
+  let res =  await jwt.sign(payload, `${process.env.ACTIVE_TOKEN_SECRET}`, {
     expiresIn: "5m",
   });
+  console.log(res)
+  return res
 };
 
 exports.generateAccessToken = (payload) => {

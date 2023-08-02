@@ -24,13 +24,14 @@ const authCtrl = {
       name: Joi.string().min(3).max(30).required(),
       email: Joi.string().email().required(),
       password: Joi.string()
-        .pattern(new RegExp("^[a-zA-Z0-9]{3,30}$"))
+        // .pattern(new RegExp("^[a-zA-Z0-9]{3,30}$"))
         .required(),
       repeat_password: Joi.ref("password"),
     });
 
     const { error } = registerSchema.validate(req.body);
     if (error) {
+      console.log(err)
       return next(error);
     }
 
@@ -46,6 +47,7 @@ const authCtrl = {
         );
       }
     } catch (err) {
+      console.log(err)
       return next(err);
     }
 
@@ -66,7 +68,7 @@ const authCtrl = {
       // prepare the model to store user data on databse
       const newUser = { name, email, password: hashedPassword };
 
-      const active_token = generateActiveToken({ newUser });
+      const active_token = await generateActiveToken({ newUser });
 
       const url = `${CLIENT_URL}/active/${active_token}`;
 

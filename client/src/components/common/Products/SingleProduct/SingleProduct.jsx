@@ -36,9 +36,11 @@ const SingleProduct = ({ product }) => {
     <>
       <div className={`product-wrap`}>
         <div className="product-img">
+        <div style={{ height: '280px', display : "flex", justifyContent : "center", alignItems : "center" }}>
           <Link to={`/product/${product._id}`}>
             <img className="default-img" src={product?.images?.url} alt="" />
           </Link>
+          </div>
 
           <div className="product-action">
             <div className="pro-same-action pro-wishlist">

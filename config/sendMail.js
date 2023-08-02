@@ -26,16 +26,15 @@ const sendEmail = async (to, url, txt) => {
 
   try {
     // const access_token = await oAuth2Client.getAccessToken();
-    const access_token = await new Promise((resolve, reject) => {
-      oAuth2Client.getAccessToken((err, token) => {
-        if (err) {
-          reject("Failed to create access token :(");
-        }
-        resolve(token);
-      });
-    });
-    console.log(access_token)
-    // edtwdmbhpzdhncvp
+    // const access_token = await new Promise((resolve, reject) => {
+    //   oAuth2Client.getAccessToken((err, token) => {
+    //     if (err) {
+    //       console.log(err)
+    //       reject("Failed to create access token :(");
+    //     }
+    //     resolve(token);
+    //   });
+    // });
 
     let transport = nodemailer.createTransport({
       service: "gmail",
