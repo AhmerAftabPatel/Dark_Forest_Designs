@@ -63,7 +63,7 @@ const MyOrders = () => {
                       <tr key={_id}>
                         <td>{_id}</td>
                         <td>{orderItems?.length}</td>
-                        <td>${totalPrice.toFixed(2)}</td>
+                        <td>Rs.{totalPrice.toFixed(2)}</td>
                         <td>
                           <button>{orderStatus}</button>
                         </td>
