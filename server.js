@@ -16,11 +16,14 @@ const orderRoutes = require("./routes/orderRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 
 const app = express();
-
+const corsConfig = {
+  credentials: true,
+  origin: true,
+};
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors(corsConfig));
 app.use(cookieParser());
 app.use(
   fileUpload({
@@ -51,6 +54,7 @@ app.use("/api", orderRoutes);
 app.use("/api", messageRoutes);
 
 app.get("/", (err,res) => res.end("hello"))
+
 // Database connection
 connectDb();
 

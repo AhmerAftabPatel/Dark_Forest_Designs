@@ -21,6 +21,7 @@ export const login = (email, password) => async (dispatch) => {
     });
 
     const config = {
+      withCredentials: true,
       headers: {
         "Content-Type": "application/json",
       },
@@ -96,6 +97,7 @@ export const refreshToken = () => async (dispatch) => {
     });
 
     const config = {
+    withCredentials: true,
       headers: {
         "Content-Type": "application/json",
       },

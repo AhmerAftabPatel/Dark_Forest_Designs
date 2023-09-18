@@ -145,7 +145,7 @@ const authCtrl = {
   async refreshToken(req, res, next) {
     try {
       const rf_token = req.cookies.refreshtoken;
-
+      console.log(rf_token);
       if (!rf_token)
         return next(CustomErrorHandler.badRequest("Please login now!"));
 
