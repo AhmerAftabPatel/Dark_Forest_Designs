@@ -205,7 +205,7 @@ const CheckoutForm = () => {
   );
 };
 
-const stripePromise = loadStripe('pk_live_51NBSFhSBz2WGV9rACqvfF6RY2FSKtL7GkgWyij7dSTPchxTmhMlUOp9qpY64SN2jQDHEXMZni2xe3FCmE96Lbt880010vW5LBm');
+const stripePromise = loadStripe('pk_live_51NrUDbSB18fKjwjxgM5dIPZudKsbsbxGcLTi52UAkz8Lr44c2nU1ZUC3KNkgVqsLZwMZpvqMjmFBl8GQqiNfZmiK00gGFEM6Zd');
 // const stripePromise = loadStripe('pk_test_51NBSFhSBz2WGV9rAlhMp1qvuWtUdZmxz2oIErGwtox3XDPJyeXZJBORbao3fOAcPQVzdf3oqhotvPm5InNprTsgD00mQ3DQNFV');
 
 const Payment = () => (
