@@ -1,4 +1,4 @@
-// here extends the inbuild javascript class Error thake
+// here extends the inbuild javascript class Error
 class CustomErrorHandler extends Error {
   constructor(status, message) {
     super();
