@@ -6,6 +6,8 @@ import { Spinner } from 'react-bootstrap'
 import moment from 'moment'
 import Carousel from 'react-bootstrap/Carousel'
 import { useToasts } from 'react-toast-notifications'
+import DeliveryImage from '../../assets/images/Delivery (1).png';
+import HandmadeImage from '../../assets/images/handmade.png';
 import {
   getAllProduct,
   getProductById,
@@ -265,7 +267,12 @@ const ProductDetail = () => {
                     : 'Out of Stock'}
                 </p>
               </div>
-
+              {product?.size && <div className='product__detail__info-stock'>
+                <p style={{ fontWeight: '600' }}>
+                  Size: {' '}
+                  {product?.size && product?.size}
+                </p>
+              </div>}
               <div className='product__detail__info__buttons'>
                 <div className='product__detail__info__buttons-quantity'>
                   <button onClick={decreaseQuantity} className='minus'>
@@ -312,7 +319,14 @@ const ProductDetail = () => {
                   </button>
                 </div>
               </div>
-
+              <div className='product__detail__info__buttons'>
+                <div>
+                  <img src={HandmadeImage} width={160}/>
+                </div>
+                <div>
+                  <img src={DeliveryImage} width={160}/>
+                </div>
+              </div>
               <div className='product__detail__info-desc'>
                 <p>{product.description}</p>
               </div>

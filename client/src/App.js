@@ -27,6 +27,7 @@ import { Header } from "./components";
 const UserDashboard = lazy(() =>
   import("./components/Manager/UserDashboard/UserDashboard")
 );
+
 const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"));
 
 const Blog = lazy(() => import("./pages/Blog/Blog"));
