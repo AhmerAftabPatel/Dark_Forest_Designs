@@ -39,10 +39,10 @@ const CheckoutForm = () => {
   const payBtn = useRef(null);
 
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
-  const auth = useSelector((state) => state.userLogin?.userInfo);
-  const { user } = auth;
+  // const auth = useSelector((state) => state.userLogin?.userInfo);
+  // const { user } = auth;
 
-  const token = useSelector((state) => state.userLogin?.userInfo?.access_token);
+  // const token = useSelector((state) => state.userLogin?.userInfo?.access_token);
 
   const { error } = useSelector((state) => state.newOrder);
 
@@ -67,10 +67,10 @@ const CheckoutForm = () => {
     try {
       setIsLoading(true);
       const config = {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
+        // headers: {
+        //   "Content-Type": "application/json",
+        //   Authorization: token,
+        // },
       };
       const { data } = await axios.post(
         `${BASE_URL}/api/payment/process`,
@@ -86,8 +86,8 @@ const CheckoutForm = () => {
         payment_method: {
           card: elements.getElement(CardNumberElement),
           billing_details: {
-            name: user.name,
-            email: user.email,
+            name: shippingInfo.name,
+            email: shippingInfo.email,
             address: {
               line1: shippingInfo.address,
               city: shippingInfo.city,
@@ -114,14 +114,14 @@ const CheckoutForm = () => {
             id: result.paymentIntent.id,
             status: result.paymentIntent.status,
           };
-          dispatch(createOrder(order, token, navigate));
+          dispatch(createOrder(order, "", navigate));
 
           // setErrorMessage
 
           await axios.post(
             `${BASE_URL}/api/user/success`,
             {
-              email: user.email,
+              email: shippingInfo.email,
             },
             config
           );

@@ -16,16 +16,16 @@ const SENDER_MAIL = `${SENDER_EMAIL_ADDRESS}`
 
 // send mail
 const sendMailPaymentSuccess = async (to, txt) => {
-  const oAuth2Client = new OAuth2Client(
-    CLIENT_ID,
-    CLIENT_SECRET,
-    OAUTH_PLAYGROUND,
-  )
+  // const oAuth2Client = new OAuth2Client(
+  //   CLIENT_ID,
+  //   CLIENT_SECRET,
+  //   OAUTH_PLAYGROUND,
+  // )
 
-  oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN })
+  // oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN })
 
   try {
-    const access_token = await oAuth2Client.getAccessToken()
+    // const access_token = await oAuth2Client.getAccessToken()
 
     // const transport = nodemailer.createTransport({
     //   service: "gmail",
@@ -52,7 +52,7 @@ const sendMailPaymentSuccess = async (to, txt) => {
       subject: 'Dark Forest Designs - Ecommerce',
       html: `
               <div style="max-width: 700px; margin:auto; padding: 50px 20px;">
-              <p>Congratulations! your payment is Succfully done. You get your product shorly.
+              <p>Congratulations! your payment is Successfully placed. You will get your product shorly.
               </p>
               </div>
             `,

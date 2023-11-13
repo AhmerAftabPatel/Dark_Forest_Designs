@@ -5,6 +5,6 @@ const auth = require("../middlewares/auth");
 const router = express.Router();
 
 // router.route("/payment/process").post(auth, paymentConroller.processPayment);
-router.post("/payment/process", auth, paymentConroller.processPayment);
+router.post("/payment/process", paymentConroller.processPayment);
 
 module.exports = router;

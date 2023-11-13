@@ -27,6 +27,8 @@ const Shipping = () => {
   const [country, setCountry] = useState(shippingInfo.country);
   const [pinCode, setPinCode] = useState(shippingInfo.pinCode);
   const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
+  const [email, setEmail] = useState(shippingInfo.email);
+  const [name, setName] = useState(shippingInfo.name);
 
   const shippingSubmit = (e) => {
     e.preventDefault();
@@ -36,7 +38,7 @@ const Shipping = () => {
       return;
     }
     dispatch(
-      saveShippingInfo({ address, city, state, country, pinCode, phoneNo })
+      saveShippingInfo({ address, city, state, country, pinCode, phoneNo, email, name })
     );
     navigate("/order/confirm");
   };
@@ -94,7 +96,19 @@ const Shipping = () => {
                 onChange={(e) => setPinCode(e.target.value)}
               />
             </div>
-
+            <div>
+              <BsFillTelephoneFill />
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Full Name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                size="11"
+              />
+            </div>
             <div>
               <BsFillTelephoneFill />
               <input
@@ -105,6 +119,19 @@ const Shipping = () => {
                 required
                 value={phoneNo}
                 onChange={(e) => setPhoneNo(e.target.value)}
+                size="11"
+              />
+            </div>
+            <div>
+              <BsFillTelephoneFill />
+              <input
+                type="text"
+                name="email"
+                id="email"
+                placeholder="Email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 size="11"
               />
             </div>

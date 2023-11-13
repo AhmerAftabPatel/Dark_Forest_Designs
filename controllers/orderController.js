@@ -1,6 +1,7 @@
 const sendMailPaymentSuccess = require("../config/sendMailPaymentSuccess");
 const Order = require("../models/orderModel");
 const Product = require("../models/productModel");
+const User = require("../models/userModels");
 const CustomErrorHandler = require("../services/CustomErrorHandler");
 const orderController = {
   async newOrder(req, res, next) {
@@ -15,6 +16,21 @@ const orderController = {
         totalPrice,
       } = req.body;
 
+
+      let user
+      
+      user = await User.findOne({
+        email : shippingInfo.email
+      })
+      
+      if (!user){
+        user = await User.create({
+          email : shippingInfo.email,
+          name : shippingInfo.name,
+          type: "auto"
+        })
+      }
+
       const order = await Order.create({
         shippingInfo,
         orderItems,
@@ -24,7 +40,7 @@ const orderController = {
         shippingPrice,
         totalPrice,
         paidAt: Date.now(),
-        user: req.user._id,
+        user: user._id,
       });
 
       res.status(201).json({
@@ -32,6 +48,7 @@ const orderController = {
         order,
       });
     } catch (error) {
+      console.log(error)
       return next(error);
     }
   },

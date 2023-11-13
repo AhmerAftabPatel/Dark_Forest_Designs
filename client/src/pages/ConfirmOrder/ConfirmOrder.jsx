@@ -5,7 +5,7 @@ const ConfirmOrder = () => {
   const navigate = useNavigate();
   const { shippingInfo, cartItems } = useSelector((state) => state?.cart);
 
-  const { userInfo } = useSelector((state) => state?.userLogin);
+  // const { userInfo } = useSelector((state) => state?.userLogin);
 
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.quantity * item.price,
@@ -49,7 +49,12 @@ const ConfirmOrder = () => {
             <div className="confirm__order__shipping__area__box">
               <div>
                 <p>
-                  Name: <span>{userInfo?.user?.name}</span>
+                  Name: <span>{shippingInfo?.name}</span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  Email: <span>{shippingInfo?.email}</span>
                 </p>
               </div>
               <div>

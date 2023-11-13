@@ -14,15 +14,15 @@ import axios from "axios";
 import { BASE_URL } from "../../config";
 
 // Create Order action
-export const createOrder = (order, token) => async (dispatch) => {
+export const createOrder = (order) => async (dispatch) => {
   try {
     dispatch({ type: CREATE_ORDER_REQUEST });
 
     const config = {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
+      // headers: {
+      //   "Content-Type": "application/json",
+      //   Authorization: token,
+      // },
     };
     const { data } = await axios.post(
       `${BASE_URL}/api/order/new`,

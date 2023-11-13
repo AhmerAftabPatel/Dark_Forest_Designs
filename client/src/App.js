@@ -97,34 +97,34 @@ function App() {
               <Route
                 path="shipping"
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <Shipping />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               ></Route>
               <Route
                 path="/order/confirm"
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <ConfirmOrder />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               ></Route>
 
               <Route
                 path="/process/payment"
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <Payment />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               />
               <Route
                 path="/success"
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <OrderSuccess />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               />
 

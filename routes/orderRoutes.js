@@ -5,7 +5,7 @@ const express = require("express");
 
 const router = express.Router();
 
-router.post("/order/new", auth, orderController.newOrder);
+router.post("/order/new", orderController.newOrder);
 router.get("/order/me", auth, orderController.myOrders);
 router.get("/order/:id", auth, orderController.getOrderById);
 
@@ -17,6 +17,6 @@ router
   .delete(auth, authAdmin, orderController.deleteOrder);
 
 // when the payment is success send the email on user
-router.post("/user/success", auth, orderController.sendMailUserPaymentSuccess);
+router.post("/user/success", orderController.sendMailUserPaymentSuccess);
 
 module.exports = router;
