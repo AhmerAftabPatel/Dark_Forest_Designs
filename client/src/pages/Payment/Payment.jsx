@@ -12,7 +12,7 @@ import {
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { useToasts } from "react-toast-notifications";
-
+import SecureImageStripe from '../../assets/images/secure-stripe.png'
 import { BsCreditCard, BsCalendar2Event, BsFillKeyFill } from "react-icons/bs";
 
 import axios from "axios";
@@ -162,7 +162,7 @@ const CheckoutForm = () => {
   }, [addToast, errorMessage, successMessage]);
 
   return (
-    <div className="container-div payment-checkout">
+    <div className="payment-checkout">
       <>
         <Helmet>
           <meta charSet="utf-8" />
@@ -192,6 +192,9 @@ const CheckoutForm = () => {
                 `Pay - Rs.${orderInfo && orderInfo.totalPrice.toFixed(2)}`
               )}
             </button>
+            <div style ={{marginTop : "12px"}}>
+            <img src={SecureImageStripe}/>
+            </div>
             {/* <input
               type="submit"
               value={`Pay - $${orderInfo && orderInfo.totalPrice}`}

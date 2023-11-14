@@ -1,7 +1,10 @@
 @use "./utils/" as *;
 
 .payment-checkout {
-  padding: 7rem 0;
+  padding: 1rem 0;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
 
 .payment {
@@ -12,7 +15,7 @@
   margin: 2vmax;
 
   &__form {
-    border: 1px solid rgb(216, 216, 216);
+    // border: 1px solid rgb(216, 216, 216);
     width: 100%;
     height: 100%;
     padding: 3rem 2rem;
