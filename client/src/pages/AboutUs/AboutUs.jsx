@@ -16,9 +16,9 @@ const AboutUs = () => (
       <div className="about__home">
         <div className="about__home__desc container-div grid">
           <div>
-            <h3>About Us</h3>
+            <h3>Who We Are</h3>
             <p>
-            Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+            At the heart of Darkforest Designs is a team of skilled artisans and craftsmen dedicated to bringing your vision to life. With a rich heritage in woodworking and a contemporary approach to design, we embark on a journey to transform spaces into expressions of individuality and elegance. Our journey began with a simple yet profound goal – to create timeless pieces that resonate with the unique character of every home or space they adorn.
             </p>
           </div>
         </div>
