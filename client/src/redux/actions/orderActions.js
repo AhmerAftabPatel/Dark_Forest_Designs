@@ -33,7 +33,7 @@ export const createOrder = (order) => async (dispatch) => {
     dispatch({ type: CREATE_ORDER_SUCCESS, payload: data });
 
     localStorage.removeItem("cartItems");
-    window.location.href = "/success";
+    window.location.href = `/success?id=${data?.order?.id}`;
   } catch (error) {
     dispatch({
       type: CREATE_ORDER_FAIL,
